@@ -13,3 +13,14 @@ userName = "12";
 
 let isInstructor: boolean;
 isInstructor = true;
+
+// More complex types:
+let hobbies: string[]; // tell typescript we want an array of strings.
+hobbies = ["sport", "sing", "12"];
+
+let person;
+
+person = {
+  name: "Grace",
+  age: 23,
+};
