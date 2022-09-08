@@ -18,9 +18,20 @@ isInstructor = true;
 let hobbies: string[]; // tell typescript we want an array of strings.
 hobbies = ["sport", "sing", "12"];
 
-let person;
+let person: {
+  name: string;
+  age: number;
+};
 
 person = {
   name: "Grace",
   age: 23,
 };
+
+let people: { name: string; age: number }[];
+
+// Type inference
+
+let course = "React";
+
+//course = 2134;
