@@ -38,7 +38,7 @@ course = 2134;
 
 // Functions & types
 
-function add(a: number, b: number): number | string {
+function add4(a: number, b: number): number | string {
   return a + b;
 }
 
