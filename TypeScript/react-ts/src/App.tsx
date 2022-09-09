@@ -22,12 +22,18 @@ function App() {
     }); // concat will return a new array that contains newTodo, not mutate the existing array
   };
 
+  const onRemoveHandler = (todoId: string) => {
+    setTodos((PrevTodos) => {
+      return PrevTodos.filter((todo) => todo.id !== todoId);
+    });
+  };
+
   console.log("todos", todos);
 
   return (
     <div>
       <NewTodo onAddTodo={addTodoHandler} />
-      <Todos items={todos} />
+      <Todos items={todos} onRemoveTodo={onRemoveHandler} />
     </div>
   );
 }
