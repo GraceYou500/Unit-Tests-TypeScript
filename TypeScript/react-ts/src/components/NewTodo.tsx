@@ -1,10 +1,10 @@
-import React, { useRef } from "react";
+import React, { useContext, useRef } from "react";
+import { TodosContext } from "../store/todos-context";
 import classes from "./NewTodo.module.css";
 
 // void here means return nothing, coz we don't need return value in the aubmithandler
-const NewTodo: React.FC<{ onAddTodo: (urgument: string) => void }> = (
-  props
-) => {
+const NewTodo: React.FC = () => {
+  const todosCtx = useContext(TodosContext);
   const inputRef = useRef<HTMLInputElement>(null); // meaning the inputRef we created here will connect to an input element type
 
   const submitHandler = (event: React.FormEvent) => {
@@ -17,7 +17,7 @@ const NewTodo: React.FC<{ onAddTodo: (urgument: string) => void }> = (
       return;
     }
 
-    props.onAddTodo(enteredText);
+    todosCtx.addTodo(enteredText);
   };
 
   return (
